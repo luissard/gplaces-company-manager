@@ -35,7 +35,27 @@ class GooglePlacesManager:
             exit(0)
 
     def _register_api_cost(self, cost):
-        # TODO register api cost in the api_costs_table
+        """Registers the cost of API calls and checks if it exceeds the monthly limit."""
+        year, month = datetime.date.today().year, datetime.date.today().month
+
+        # Update or insert the cost
+        self.cursor.execute('SELECT cost, query_count FROM api_costs WHERE year = ? AND month = ?', (year, month))
+        result = self.cursor.fetchone()
+
+        if result:
+            total_cost = round(result[0] + cost, 6)
+            query_count = result[1] + 1
+            if total_cost > self.max_monthly_cost:
+                return False
+            self.cursor.execute('UPDATE api_costs SET cost = ?, query_count = ? WHERE year = ? AND month = ?',
+                                (total_cost, query_count, year, month))
+        else:
+            if cost > self.max_monthly_cost:
+                return False
+            self.cursor.execute('INSERT INTO api_costs (year, month, cost, query_count) VALUES (?, ?, ?, ?)',
+                                (year, month, cost, 1))
+
+        self.conn.commit()
         return True
 
     def get_query_cost_by_type(self, query_type):
@@ -53,11 +73,69 @@ class GooglePlacesManager:
 
     def google_places_request(self, request_type, query_model, params, tries=0):
         """Check if we have monthly cost available before performing the query"""
-        # Todo : create function to do a request to google places by params and register query costs
+        if 'page_token' in params:
+            time.sleep(2)
+        try:
+            cost = self.get_query_cost_by_type(request_type)
+            if not self._register_api_cost(cost):
+                self.error('Monthly API cost limit reached. Exiting', True)
+            if query_model == 'place':
+                return self.gmaps.place(**params)
+            elif query_model == 'places':
+                return self.gmaps.places(**params)
+
+            self.error('The query model is invalid. Exiting', True)
+        except Exception as e:
+            time.sleep(10)
+            if tries < 1:
+                self.google_places_request(request_type, query_model, params, tries=tries + 1)
+                self.error('The query returned an error' + repr(e), True)
 
     def update_company_details(self, frequency_days_to_update, limit=200):
         """Updates the details of the companies stored in the database not updated in the last frequency_days_to_update"""
-        # Todo : develop all the logic to update company details
+        self.cursor.execute('''
+            SELECT place_id, name FROM company 
+            WHERE (julianday(?) - julianday(detail_updated_at)) > (?) OR detail_updated_at IS NULL
+            ORDER BY section_id ASC LIMIT ?          
+            ''', (datetime.date.today(), frequency_days_to_update, limit)
+                            )
+        companies_to_update = self.cursor.fetchall()
+        print(f"Updating {len(companies_to_update)} company details...")
+
+        for company in companies_to_update:
+            print(f"Updating {company[1]} ...")
+            place_id = company[0]
+            params = {
+                'place_id': place_id,
+                'fields': ['website', 'formatted_phone_number', 'rating', 'reviews', 'user_ratings_total',
+                           'opening_hours'],
+                'language': 'es'
+            }
+            self.current_company_details = self.google_places_request('place_details', 'place', params)
+
+            website = self.current_company_details['result'].get('website')
+            phone_number = self.current_company_details['result'].get('formatted_phone_number')
+            avg_reviews = self.current_company_details['result'].get('rating')
+            all_reviews_json = self.get_all_reviews_json()
+            total_reviews = self.current_company_details['result'].get('user_ratings_total')
+            opening_hours = self.get_opening_hours_json()
+
+            self.cursor.execute('''
+                INSERT INTO company_details 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(place_id) DO 
+                UPDATE SET website = ?, phone_number = ?, total_reviews = ?, avg_reviews = ?, reviews = ?
+                , opening_hours = ?, updated_at = ?                
+            ''', (
+                place_id, website, phone_number, total_reviews, avg_reviews, all_reviews_json, opening_hours,
+                datetime.date.today().strftime('%Y-%m-%d'), website, phone_number, total_reviews, avg_reviews,
+                all_reviews_json, opening_hours, datetime.date.today().strftime('%Y-%m-%d')
+            )
+                                )
+
+            self.cursor.execute("UPDATE company SET detail_updated_at = ? WHERE place_id = ?"
+                                , (datetime.date.today().strftime('%Y-%m-%d'), place_id))
+
+            self.conn.commit()
 
     def get_opening_hours_json(self):
         weekday_text = []
