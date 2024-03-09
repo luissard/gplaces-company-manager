@@ -1,0 +1,1832 @@
+{
+    "Madrid": {
+        "lat": 40.4169,
+        "lon": -3.7033,
+        "population": 6211000
+    },
+    "Barcelona": {
+        "lat": 41.3825,
+        "lon": 2.1769,
+        "population": 4800000
+    },
+    "Sevilla": {
+        "lat": 37.24,
+        "lon": -5.99,
+        "population": 1100000
+    },
+    "Málaga": {
+        "lat": 36.7194,
+        "lon": -4.42,
+        "population": 967250
+    },
+    "Valencia": {
+        "lat": 39.47,
+        "lon": -0.3764,
+        "population": 792492
+    },
+    "Bilbao": {
+        "lat": 43.2569,
+        "lon": -2.9236,
+        "population": 775000
+    },
+    "Zaragoza": {
+        "lat": 41.65,
+        "lon": -0.8833,
+        "population": 675301
+    },
+    "Murcia": {
+        "lat": 37.9861,
+        "lon": -1.1303,
+        "population": 672773
+    },
+    "Palma": {
+        "lat": 39.5667,
+        "lon": 2.65,
+        "population": 550000
+    },
+    "Las Palmas": {
+        "lat": 28.1272,
+        "lon": -15.4314,
+        "population": 378797
+    },
+    "Alicante": {
+        "lat": 38.3453,
+        "lon": -0.4831,
+        "population": 338577
+    },
+    "Córdoba": {
+        "lat": 37.8845,
+        "lon": -4.7796,
+        "population": 322071
+    },
+    "Valladolid": {
+        "lat": 41.6528,
+        "lon": -4.7236,
+        "population": 297775
+    },
+    "Vigo": {
+        "lat": 42.2314,
+        "lon": -8.7124,
+        "population": 293837
+    },
+    "Gijón": {
+        "lat": 43.5333,
+        "lon": -5.7,
+        "population": 268896
+    },
+    "Vitoria-Gasteiz": {
+        "lat": 42.85,
+        "lon": -2.6833,
+        "population": 253672
+    },
+    "A Coruña": {
+        "lat": 43.3667,
+        "lon": -8.3833,
+        "population": 245468
+    },
+    "Elche": {
+        "lat": 38.2669,
+        "lon": -0.6983,
+        "population": 235580
+    },
+    "Granada": {
+        "lat": 37.1781,
+        "lon": -3.6008,
+        "population": 231775
+    },
+    "Badalona": {
+        "lat": 41.4333,
+        "lon": 2.2333,
+        "population": 223506
+    },
+    "Tarrasa": {
+        "lat": 41.5611,
+        "lon": 2.0081,
+        "population": 224114
+    },
+    "Sabadell": {
+        "lat": 41.5483,
+        "lon": 2.1075,
+        "population": 216204
+    },
+    "Petrel": {
+        "lat": 38.4789,
+        "lon": -0.7967,
+        "population": 218843
+    },
+    "Oviedo": {
+        "lat": 43.36,
+        "lon": -5.845,
+        "population": 217552
+    },
+    "Cartagena": {
+        "lat": 37.6,
+        "lon": -0.9819,
+        "population": 216961
+    },
+    "Móstoles": {
+        "lat": 40.3333,
+        "lon": -3.8667,
+        "population": 209639
+    },
+    "Jerez de la Frontera": {
+        "lat": 36.6817,
+        "lon": -6.1378,
+        "population": 212801
+    },
+    "Pamplona": {
+        "lat": 42.8167,
+        "lon": -1.65,
+        "population": 203418
+    },
+    "Santa Cruz": {
+        "lat": 28.4667,
+        "lon": -16.25,
+        "population": 208688
+    },
+    "Almería": {
+        "lat": 36.8403,
+        "lon": -2.4681,
+        "population": 200753
+    },
+    "Alcalá de Henares": {
+        "lat": 40.4818,
+        "lon": -3.3643,
+        "population": 196888
+    },
+    "Fuenlabrada": {
+        "lat": 40.2833,
+        "lon": -3.8,
+        "population": 192233
+    },
+    "Leganés": {
+        "lat": 40.3281,
+        "lon": -3.7644,
+        "population": 187762
+    },
+    "Donostia": {
+        "lat": 43.32,
+        "lon": -1.98,
+        "population": 188102
+    },
+    "Getafe": {
+        "lat": 40.3047,
+        "lon": -3.7311,
+        "population": 183219
+    },
+    "Santander": {
+        "lat": 43.4628,
+        "lon": -3.805,
+        "population": 172221
+    },
+    "Burgos": {
+        "lat": 42.3408,
+        "lon": -3.6997,
+        "population": 174051
+    },
+    "Alcorcón": {
+        "lat": 40.35,
+        "lon": -3.8333,
+        "population": 170817
+    },
+    "Castellón de la Plana": {
+        "lat": 39.9831,
+        "lon": -0.0331,
+        "population": 172589
+    },
+    "Albacete": {
+        "lat": 38.9956,
+        "lon": -1.8558,
+        "population": 172722
+    },
+    "Guadalajara": {
+        "lat": 40.6337,
+        "lon": -3.1674,
+        "population": 161683
+    },
+    "La Laguna": {
+        "lat": 28.4853,
+        "lon": -16.3167,
+        "population": 158010
+    },
+    "Logroño": {
+        "lat": 42.465,
+        "lon": -2.4456,
+        "population": 150808
+    },
+    "Marbella": {
+        "lat": 36.5167,
+        "lon": -4.8833,
+        "population": 150725
+    },
+    "Badajoz": {
+        "lat": 38.8803,
+        "lon": -6.9753,
+        "population": 150610
+    },
+    "Salamanca": {
+        "lat": 40.965,
+        "lon": -5.6642,
+        "population": 143269
+    },
+    "Huelva": {
+        "lat": 37.25,
+        "lon": -6.95,
+        "population": 142538
+    },
+    "Lleida": {
+        "lat": 41.6167,
+        "lon": 0.6333,
+        "population": 140797
+    },
+    "Dos Hermanas": {
+        "lat": 37.2836,
+        "lon": -5.9222,
+        "population": 137561
+    },
+    "Tarragona": {
+        "lat": 41.1187,
+        "lon": 1.2453,
+        "population": 135436
+    },
+    "Parla": {
+        "lat": 40.2372,
+        "lon": -3.7742,
+        "population": 131689
+    },
+    "Torrejón de Ardoz": {
+        "lat": 40.4614,
+        "lon": -3.4978,
+        "population": 134733
+    },
+    "Mataró": {
+        "lat": 41.5333,
+        "lon": 2.45,
+        "population": 129120
+    },
+    "León": {
+        "lat": 42.6056,
+        "lon": -5.57,
+        "population": 122051
+    },
+    "Algeciras": {
+        "lat": 36.1275,
+        "lon": -5.4539,
+        "population": 122982
+    },
+    "Cádiz": {
+        "lat": 36.535,
+        "lon": -6.2975,
+        "population": 114244
+    },
+    "Alcobendas": {
+        "lat": 40.5333,
+        "lon": -3.6333,
+        "population": 117041
+    },
+    "Jaén": {
+        "lat": 37.7667,
+        "lon": -3.7711,
+        "population": 111932
+    },
+    "Reus": {
+        "lat": 41.1549,
+        "lon": 1.1087,
+        "population": 106741
+    },
+    "Ourense": {
+        "lat": 42.3364,
+        "lon": -7.8633,
+        "population": 104596
+    },
+    "Girona": {
+        "lat": 41.9833,
+        "lon": 2.8167,
+        "population": 102666
+    },
+    "Roquetas de Mar": {
+        "lat": 36.7642,
+        "lon": -2.6147,
+        "population": 102881
+    },
+    "San Vicente de Baracaldo": {
+        "lat": 43.2972,
+        "lon": -2.9917,
+        "population": 100907
+    },
+    "Telde": {
+        "lat": 27.9985,
+        "lon": -15.4167,
+        "population": 102769
+    },
+    "Santiago de Compostela": {
+        "lat": 42.8778,
+        "lon": -8.5444,
+        "population": 98179
+    },
+    "San Fernando": {
+        "lat": 36.4667,
+        "lon": -6.2,
+        "population": 94867
+    },
+    "Ciudad de Melilla": {
+        "lat": 35.2825,
+        "lon": -2.9475,
+        "population": 86261
+    },
+    "Fuengirola": {
+        "lat": 36.5417,
+        "lon": -4.625,
+        "population": 83226
+    },
+    "Ciudad de Ceuta": {
+        "lat": 35.8867,
+        "lon": -5.3,
+        "population": 83517
+    },
+    "San Baudilio de Llobregat": {
+        "lat": 41.3458,
+        "lon": 2.0417,
+        "population": 83755
+    },
+    "Toledo": {
+        "lat": 39.8567,
+        "lon": -4.0244,
+        "population": 85449
+    },
+    "Rubí": {
+        "lat": 41.4933,
+        "lon": 2.0325,
+        "population": 79007
+    },
+    "Avilés": {
+        "lat": 43.5561,
+        "lon": -5.9083,
+        "population": 76874
+    },
+    "Benalmádena": {
+        "lat": 36.6,
+        "lon": -4.5167,
+        "population": 73160
+    },
+    "Castelldefels": {
+        "lat": 41.28,
+        "lon": 1.9767,
+        "population": 67307
+    },
+    "Torremolinos": {
+        "lat": 36.6218,
+        "lon": -4.5003,
+        "population": 68819
+    },
+    "Villanueva y Geltrú": {
+        "lat": 41.2243,
+        "lon": 1.7259,
+        "population": 68152
+    },
+    "Viladecáns": {
+        "lat": 41.3158,
+        "lon": 2.0194,
+        "population": 66720
+    },
+    "El Prat de Llobregat": {
+        "lat": 41.3246,
+        "lon": 2.0953,
+        "population": 65532
+    },
+    "Arrecife": {
+        "lat": 28.9625,
+        "lon": -13.5506,
+        "population": 64497
+    },
+    "Collado-Villalba": {
+        "lat": 40.6333,
+        "lon": -4.0083,
+        "population": 64263
+    },
+    "Granollers": {
+        "lat": 41.6083,
+        "lon": 2.2889,
+        "population": 62475
+    },
+    "La Línea de la Concepción": {
+        "lat": 36.1611,
+        "lon": -5.3486,
+        "population": 63365
+    },
+    "Portugalete": {
+        "lat": 43.3194,
+        "lon": -3.0194,
+        "population": 45285
+    },
+    "Mislata": {
+        "lat": 39.475,
+        "lon": -0.4156,
+        "population": 44320
+    },
+    "Mérida": {
+        "lat": 38.9,
+        "lon": -6.3333,
+        "population": 59424
+    },
+    "Esplugas de Llobregat": {
+        "lat": 41.3767,
+        "lon": 2.0858,
+        "population": 46777
+    },
+    "Mollet": {
+        "lat": 41.5356,
+        "lon": 2.2107,
+        "population": 51294
+    },
+    "Ibiza": {
+        "lat": 38.9089,
+        "lon": 1.4328,
+        "population": 50715
+    },
+    "Santurce-Antiguo": {
+        "lat": 43.3303,
+        "lon": -3.0314,
+        "population": 46085
+    },
+    "Mairena del Aljarafe": {
+        "lat": 37.3333,
+        "lon": -6.0667,
+        "population": 47161
+    },
+    "Figueras": {
+        "lat": 42.2667,
+        "lon": 2.965,
+        "population": 47088
+    },
+    "San Felíu de Llobregat": {
+        "lat": 41.3833,
+        "lon": 2.0439,
+        "population": 45642
+    },
+    "Ripollet": {
+        "lat": 41.4969,
+        "lon": 2.1574,
+        "population": 38347
+    },
+    "San Adrián de Besós": {
+        "lat": 41.4305,
+        "lon": 2.2183,
+        "population": 37283
+    },
+    "Igualada": {
+        "lat": 41.5814,
+        "lon": 1.6208,
+        "population": 40875
+    },
+    "Alcantarilla": {
+        "lat": 37.9722,
+        "lon": -1.2094,
+        "population": 42630
+    },
+    "Blanes": {
+        "lat": 41.674,
+        "lon": 2.7921,
+        "population": 40579
+    },
+    "Villafranca del Panadés": {
+        "lat": 41.3447,
+        "lon": 1.6994,
+        "population": 40056
+    },
+    "Burjasot": {
+        "lat": 39.5064,
+        "lon": -0.4067,
+        "population": 38880
+    },
+    "San Juan Despí": {
+        "lat": 41.3668,
+        "lon": 2.057,
+        "population": 34130
+    },
+    "Premiá de Mar": {
+        "lat": 41.492,
+        "lon": 2.362,
+        "population": 28523
+    },
+    "Salt": {
+        "lat": 41.9761,
+        "lon": 2.7881,
+        "population": 32517
+    },
+    "Alacuás": {
+        "lat": 39.4583,
+        "lon": -0.4628,
+        "population": 29649
+    },
+    "Sestao": {
+        "lat": 43.3108,
+        "lon": -3.0056,
+        "population": 27533
+    },
+    "Aldaya": {
+        "lat": 39.4639,
+        "lon": -0.4628,
+        "population": 32656
+    },
+    "Paiporta": {
+        "lat": 39.4278,
+        "lon": -0.4183,
+        "population": 26567
+    },
+    "Durango": {
+        "lat": 43.1689,
+        "lon": -2.63,
+        "population": 29935
+    },
+    "San Andrés de la Barca": {
+        "lat": 41.4478,
+        "lon": 1.9769,
+        "population": 27175
+    },
+    "San Vicente dels Horts": {
+        "lat": 41.3932,
+        "lon": 2.0097,
+        "population": 28115
+    },
+    "Martorell": {
+        "lat": 41.4744,
+        "lon": 1.9305,
+        "population": 28684
+    },
+    "Catarroja": {
+        "lat": 39.4028,
+        "lon": -0.4044,
+        "population": 28679
+    },
+    "Tomares": {
+        "lat": 37.3764,
+        "lon": -6.0458,
+        "population": 25370
+    },
+    "Armilla": {
+        "lat": 37.15,
+        "lon": -3.6167,
+        "population": 24629
+    },
+    "Camas": {
+        "lat": 37.402,
+        "lon": -6.0332,
+        "population": 27490
+    },
+    "Alboraya": {
+        "lat": 39.5,
+        "lon": -0.3522,
+        "population": 25149
+    },
+    "San Juan de Aznalfarache": {
+        "lat": 37.3667,
+        "lon": -6.0167,
+        "population": 22138
+    },
+    "San Juan de Alicante": {
+        "lat": 38.4014,
+        "lon": -0.4367,
+        "population": 24450
+    },
+    "Maracena": {
+        "lat": 37.2,
+        "lon": -3.6333,
+        "population": 22358
+    },
+    "San Juan de Vilasar": {
+        "lat": 41.5053,
+        "lon": 2.3928,
+        "population": 21067
+    },
+    "Alfafar": {
+        "lat": 39.4222,
+        "lon": -0.3906,
+        "population": 21480
+    },
+    "Lugo": {
+        "lat": 43.0167,
+        "lon": -7.55,
+        "population": 97613
+    },
+    "San Cugat del Vallés": {
+        "lat": 41.4735,
+        "lon": 2.0852,
+        "population": 95725
+    },
+    "Las Rozas de Madrid": {
+        "lat": 40.4917,
+        "lon": -3.8733,
+        "population": 95725
+    },
+    "Lorca": {
+        "lat": 37.6798,
+        "lon": -1.6944,
+        "population": 97151
+    },
+    "Cáceres": {
+        "lat": 39.4833,
+        "lon": -6.3667,
+        "population": 95456
+    },
+    "San Sebastián de los Reyes": {
+        "lat": 40.5469,
+        "lon": -3.6258,
+        "population": 91083
+    },
+    "Mijas": {
+        "lat": 36.6,
+        "lon": -4.6333,
+        "population": 89502
+    },
+    "El Puerto de Santa María": {
+        "lat": 36.6,
+        "lon": -6.2167,
+        "population": 89435
+    },
+    "Chiclana de la Frontera": {
+        "lat": 36.4167,
+        "lon": -6.15,
+        "population": 87493
+    },
+    "El Ejido": {
+        "lat": 36.7831,
+        "lon": -2.8167,
+        "population": 87500
+    },
+    "Torrente": {
+        "lat": 39.4365,
+        "lon": -0.4679,
+        "population": 85142
+    },
+    "Torrevieja": {
+        "lat": 37.9778,
+        "lon": -0.6833,
+        "population": 83547
+    },
+    "Vélez-Málaga": {
+        "lat": 36.7833,
+        "lon": -4.1,
+        "population": 83899
+    },
+    "Talavera de la Reina": {
+        "lat": 39.9583,
+        "lon": -4.8328,
+        "population": 83477
+    },
+    "Arona": {
+        "lat": 28.0996,
+        "lon": -16.6809,
+        "population": 82982
+    },
+    "Pontevedra": {
+        "lat": 42.4333,
+        "lon": -8.6333,
+        "population": 83114
+    },
+    "Orihuela": {
+        "lat": 38.0856,
+        "lon": -0.9469,
+        "population": 80784
+    },
+    "Valdemoro": {
+        "lat": 40.1908,
+        "lon": -3.6742,
+        "population": 79100
+    },
+    "Manresa": {
+        "lat": 41.7264,
+        "lon": 1.8292,
+        "population": 78192
+    },
+    "Palencia": {
+        "lat": 42.0167,
+        "lon": -4.5333,
+        "population": 77090
+    },
+    "Gandía": {
+        "lat": 38.9667,
+        "lon": -0.1833,
+        "population": 75970
+    },
+    "Alcalá de Guadaira": {
+        "lat": 37.3333,
+        "lon": -5.85,
+        "population": 75917
+    },
+    "Ciudad Real": {
+        "lat": 38.9833,
+        "lon": -3.9167,
+        "population": 75104
+    },
+    "Molina de Segura": {
+        "lat": 38.0548,
+        "lon": -1.2131,
+        "population": 74762
+    },
+    "Estepona": {
+        "lat": 36.4264,
+        "lon": -5.1472,
+        "population": 74493
+    },
+    "Majadahonda": {
+        "lat": 40.4728,
+        "lon": -3.8722,
+        "population": 72179
+    },
+    "Paterna": {
+        "lat": 39.5028,
+        "lon": -0.4406,
+        "population": 71880
+    },
+    "Benidorm": {
+        "lat": 38.5342,
+        "lon": -0.1314,
+        "population": 69738
+    },
+    "Sanlúcar de Barrameda": {
+        "lat": 36.7667,
+        "lon": -6.35,
+        "population": 69727
+    },
+    "Sagunto": {
+        "lat": 39.6764,
+        "lon": -0.2733,
+        "population": 68066
+    },
+    "Ferrol": {
+        "lat": 43.4844,
+        "lon": -8.2328,
+        "population": 64785
+    },
+    "Irún": {
+        "lat": 43.3378,
+        "lon": -1.7888,
+        "population": 62933
+    },
+    "Ponferrada": {
+        "lat": 42.5461,
+        "lon": -6.5908,
+        "population": 63747
+    },
+    "Boadilla del Monte": {
+        "lat": 40.4069,
+        "lon": -3.875,
+        "population": 62627
+    },
+    "Zamora": {
+        "lat": 41.5033,
+        "lon": -5.7556,
+        "population": 60297
+    },
+    "San Vicente del Raspeig": {
+        "lat": 38.3964,
+        "lon": -0.5253,
+        "population": 59138
+    },
+    "Aranjuez": {
+        "lat": 40.0333,
+        "lon": -3.6028,
+        "population": 59833
+    },
+    "Alcoy": {
+        "lat": 38.6983,
+        "lon": -0.4736,
+        "population": 59128
+    },
+    "Motril": {
+        "lat": 36.75,
+        "lon": -3.5167,
+        "population": 58798
+    },
+    "Ávila": {
+        "lat": 40.65,
+        "lon": -4.6833,
+        "population": 57949
+    },
+    "Linares": {
+        "lat": 38.0833,
+        "lon": -3.6333,
+        "population": 56525
+    },
+    "Pinto": {
+        "lat": 40.25,
+        "lon": -3.7,
+        "population": 54088
+    },
+    "Cuenca": {
+        "lat": 40.0667,
+        "lon": -2.15,
+        "population": 53988
+    },
+    "Huesca": {
+        "lat": 42.1333,
+        "lon": -0.4167,
+        "population": 53429
+    },
+    "Elda": {
+        "lat": 38.4789,
+        "lon": -0.7967,
+        "population": 52551
+    },
+    "Colmenar Viejo": {
+        "lat": 40.6589,
+        "lon": -3.7658,
+        "population": 53389
+    },
+    "San Bartolomé": {
+        "lat": 27.9254,
+        "lon": -15.5726,
+        "population": 53066
+    },
+    "Granadilla de Abona": {
+        "lat": 28.1167,
+        "lon": -16.5833,
+        "population": 52447
+    },
+    "Torrelavega": {
+        "lat": 43.3531,
+        "lon": -4.0458,
+        "population": 51237
+    },
+    "Rincón de la Victoria": {
+        "lat": 36.7167,
+        "lon": -4.2833,
+        "population": 50569
+    },
+    "Villareal": {
+        "lat": 39.9378,
+        "lon": -0.1014,
+        "population": 51369
+    },
+    "Pola de Siero": {
+        "lat": 43.3833,
+        "lon": -5.65,
+        "population": 51792
+    },
+    "Calviá": {
+        "lat": 39.5656,
+        "lon": 2.5056,
+        "population": 51567
+    },
+    "Utrera": {
+        "lat": 37.183,
+        "lon": -5.767,
+        "population": 51402
+    },
+    "Segovia": {
+        "lat": 40.9481,
+        "lon": -4.1183,
+        "population": 51258
+    },
+    "Adeje": {
+        "lat": 28.1167,
+        "lon": -16.7167,
+        "population": 49270
+    },
+    "Vich": {
+        "lat": 41.9304,
+        "lon": 2.2546,
+        "population": 47545
+    },
+    "Gavá": {
+        "lat": 41.3072,
+        "lon": 2.0039,
+        "population": 46974
+    },
+    "Puertollano": {
+        "lat": 38.6833,
+        "lon": -4.1167,
+        "population": 46036
+    },
+    "Alcira": {
+        "lat": 39.15,
+        "lon": -0.435,
+        "population": 45451
+    },
+    "Manacor": {
+        "lat": 39.57,
+        "lon": 3.2089,
+        "population": 45352
+    },
+    "Denia": {
+        "lat": 38.8444,
+        "lon": 0.1111,
+        "population": 43899
+    },
+    "Alhaurín de la Torre": {
+        "lat": 36.6667,
+        "lon": -4.55,
+        "population": 42531
+    },
+    "Lucena": {
+        "lat": 37.4,
+        "lon": -4.4833,
+        "population": 42712
+    },
+    "La Orotava": {
+        "lat": 28.3667,
+        "lon": -16.5167,
+        "population": 42434
+    },
+    "Puerto Real": {
+        "lat": 36.5292,
+        "lon": -6.1919,
+        "population": 41963
+    },
+    "Puerto del Rosario": {
+        "lat": 28.5,
+        "lon": -13.8667,
+        "population": 42024
+    },
+    "Antequera": {
+        "lat": 37.0183,
+        "lon": -4.5597,
+        "population": 41348
+    },
+    "Santa Eulalia del Río": {
+        "lat": 38.9847,
+        "lon": 1.5336,
+        "population": 40548
+    },
+    "San Fernando de Henares": {
+        "lat": 40.4256,
+        "lon": -3.5353,
+        "population": 39313
+    },
+    "Vendrell": {
+        "lat": 41.2201,
+        "lon": 1.5348,
+        "population": 39072
+    },
+    "Écija": {
+        "lat": 37.5333,
+        "lon": -5.0833,
+        "population": 39838
+    },
+    "Soria": {
+        "lat": 41.7667,
+        "lon": -2.4667,
+        "population": 39695
+    },
+    "La Rinconada": {
+        "lat": 37.4833,
+        "lon": -5.9667,
+        "population": 39509
+    },
+    "Lloret de Mar": {
+        "lat": 41.7,
+        "lon": 2.8333,
+        "population": 38941
+    },
+    "Plasencia": {
+        "lat": 40.0275,
+        "lon": -6.0908,
+        "population": 39558
+    },
+    "Arucas": {
+        "lat": 28.1184,
+        "lon": -15.5232,
+        "population": 38535
+    },
+    "Marratxi": {
+        "lat": 39.6421,
+        "lon": 2.7527,
+        "population": 38902
+    },
+    "Narón": {
+        "lat": 43.55,
+        "lon": -8.15,
+        "population": 38938
+    },
+    "Sama": {
+        "lat": 43.3,
+        "lon": -5.6833,
+        "population": 38683
+    },
+    "Los Palacios y Villafranca": {
+        "lat": 37.1625,
+        "lon": -5.9242,
+        "population": 38678
+    },
+    "Lluchmayor": {
+        "lat": 39.49,
+        "lon": 2.8898,
+        "population": 38722
+    },
+    "Villagarcía de Arosa": {
+        "lat": 42.5977,
+        "lon": -8.7632,
+        "population": 37677
+    },
+    "Moncada": {
+        "lat": 39.5456,
+        "lon": -0.3956,
+        "population": 21913
+    },
+    "Torre-Pacheco": {
+        "lat": 37.7333,
+        "lon": -0.95,
+        "population": 38140
+    },
+    "Oleiros": {
+        "lat": 43.3333,
+        "lon": -8.3166,
+        "population": 37271
+    },
+    "Olot": {
+        "lat": 42.1822,
+        "lon": 2.489,
+        "population": 36716
+    },
+    "Tudela": {
+        "lat": 42.0653,
+        "lon": -1.6067,
+        "population": 37247
+    },
+    "Don Benito": {
+        "lat": 38.9545,
+        "lon": -5.8617,
+        "population": 37310
+    },
+    "Mieres": {
+        "lat": 43.2508,
+        "lon": -5.7767,
+        "population": 37026
+    },
+    "Azuqueca de Henares": {
+        "lat": 40.5647,
+        "lon": -3.2681,
+        "population": 35236
+    },
+    "Santa Pola": {
+        "lat": 38.1897,
+        "lon": -0.5556,
+        "population": 36174
+    },
+    "Cambrils": {
+        "lat": 41.067,
+        "lon": 1.0564,
+        "population": 35675
+    },
+    "Águilas": {
+        "lat": 37.4042,
+        "lon": -1.5819,
+        "population": 36403
+    },
+    "Villajoyosa": {
+        "lat": 38.5053,
+        "lon": -0.2328,
+        "population": 34828
+    },
+    "Arroyomolinos": {
+        "lat": 40.2667,
+        "lon": -3.9,
+        "population": 34833
+    },
+    "Andújar": {
+        "lat": 38.0392,
+        "lon": -4.0506,
+        "population": 36212
+    },
+    "Onteniente": {
+        "lat": 38.8222,
+        "lon": -0.6072,
+        "population": 35946
+    },
+    "Tomelloso": {
+        "lat": 39.1578,
+        "lon": -3.0208,
+        "population": 36024
+    },
+    "Miranda de Ebro": {
+        "lat": 42.6833,
+        "lon": -2.9333,
+        "population": 35528
+    },
+    "Teruel": {
+        "lat": 40.3456,
+        "lon": -1.1065,
+        "population": 35691
+    },
+    "Burriana": {
+        "lat": 39.8894,
+        "lon": -0.0925,
+        "population": 35019
+    },
+    "Cieza": {
+        "lat": 38.2392,
+        "lon": -1.4189,
+        "population": 35301
+    },
+    "Galapagar": {
+        "lat": 40.5764,
+        "lon": -4.0019,
+        "population": 34834
+    },
+    "Yecla": {
+        "lat": 38.6167,
+        "lon": -1.1167,
+        "population": 35234
+    },
+    "San Javier": {
+        "lat": 37.8037,
+        "lon": -0.8343,
+        "population": 34468
+    },
+    "Inca": {
+        "lat": 39.7167,
+        "lon": 2.9167,
+        "population": 34093
+    },
+    "Úbeda": {
+        "lat": 38.0117,
+        "lon": -3.3717,
+        "population": 34208
+    },
+    "Villena": {
+        "lat": 38.635,
+        "lon": -0.8658,
+        "population": 34025
+    },
+    "Tortosa": {
+        "lat": 40.8125,
+        "lon": 0.5211,
+        "population": 33890
+    },
+    "Almendralejo": {
+        "lat": 38.6833,
+        "lon": -6.4167,
+        "population": 33741
+    },
+    "Mazarrón": {
+        "lat": 37.5983,
+        "lon": -1.3139,
+        "population": 33700
+    },
+    "Ronda": {
+        "lat": 36.7372,
+        "lon": -5.1647,
+        "population": 33624
+    },
+    "Castro-Urdiales": {
+        "lat": 43.3844,
+        "lon": -3.215,
+        "population": 33109
+    },
+    "Aranda de Duero": {
+        "lat": 41.6833,
+        "lon": -3.6833,
+        "population": 33172
+    },
+    "Arteijo": {
+        "lat": 43.3044,
+        "lon": -8.5114,
+        "population": 33076
+    },
+    "San Roque": {
+        "lat": 36.2097,
+        "lon": -5.3844,
+        "population": 33018
+    },
+    "Manises": {
+        "lat": 39.4833,
+        "lon": -0.45,
+        "population": 31287
+    },
+    "Ingenio": {
+        "lat": 27.9214,
+        "lon": -15.4324,
+        "population": 31932
+    },
+    "Amés": {
+        "lat": 42.9,
+        "lon": -8.6333,
+        "population": 32095
+    },
+    "San Pedro de Ribas": {
+        "lat": 41.2592,
+        "lon": 1.773,
+        "population": 31688
+    },
+    "Totana": {
+        "lat": 37.7711,
+        "lon": -1.5003,
+        "population": 32329
+    },
+    "Sitges": {
+        "lat": 41.2339,
+        "lon": 1.8042,
+        "population": 31222
+    },
+    "Níjar": {
+        "lat": 36.9667,
+        "lon": -2.2,
+        "population": 31816
+    },
+    "Navalcarnero": {
+        "lat": 40.2847,
+        "lon": -4.0136,
+        "population": 31379
+    },
+    "Carballo": {
+        "lat": 43.2167,
+        "lon": -8.6833,
+        "population": 31432
+    },
+    "Culleredo": {
+        "lat": 43.2883,
+        "lon": -8.3894,
+        "population": 30790
+    },
+    "Coria del Río": {
+        "lat": 37.2833,
+        "lon": -6.05,
+        "population": 30774
+    },
+    "Illescas": {
+        "lat": 40.1167,
+        "lon": -3.8333,
+        "population": 30553
+    },
+    "Arcos de la Frontera": {
+        "lat": 36.75,
+        "lon": -5.8,
+        "population": 30953
+    },
+    "Salou": {
+        "lat": 41.0796,
+        "lon": 1.1316,
+        "population": 29028
+    },
+    "San Andrés del Rabanedo": {
+        "lat": 42.6167,
+        "lon": -5.6,
+        "population": 30160
+    },
+    "Alcázar de San Juan": {
+        "lat": 39.4056,
+        "lon": -3.2056,
+        "population": 30548
+    },
+    "Puerto de la Cruz": {
+        "lat": 28.4167,
+        "lon": -16.55,
+        "population": 30349
+    },
+    "Hellín": {
+        "lat": 38.5167,
+        "lon": -1.6833,
+        "population": 30492
+    },
+    "Calafell": {
+        "lat": 41.2004,
+        "lon": 1.5693,
+        "population": 29102
+    },
+    "Galdácano": {
+        "lat": 43.2306,
+        "lon": -2.8458,
+        "population": 29404
+    },
+    "Valdepeñas": {
+        "lat": 38.7667,
+        "lon": -3.4,
+        "population": 30218
+    },
+    "Crevillente": {
+        "lat": 38.2486,
+        "lon": -0.8089,
+        "population": 29881
+    },
+    "Puente-Genil": {
+        "lat": 37.3833,
+        "lon": -4.7667,
+        "population": 29767
+    },
+    "Rota": {
+        "lat": 36.6167,
+        "lon": -6.35,
+        "population": 29491
+    },
+    "Mahón": {
+        "lat": 39.8894,
+        "lon": 4.2642,
+        "population": 29578
+    },
+    "Redondela": {
+        "lat": 42.2833,
+        "lon": -8.6167,
+        "population": 29192
+    },
+    "Vinaroz": {
+        "lat": 40.4686,
+        "lon": 0.4736,
+        "population": 29120
+    },
+    "Carmona": {
+        "lat": 37.4667,
+        "lon": -5.6333,
+        "population": 29279
+    },
+    "Candelaria": {
+        "lat": 28.3547,
+        "lon": -16.371,
+        "population": 28485
+    },
+    "Lepe": {
+        "lat": 37.2542,
+        "lon": -7.2033,
+        "population": 28617
+    },
+    "Villaviciosa de Odón": {
+        "lat": 40.3583,
+        "lon": -3.9033,
+        "population": 28152
+    },
+    "Seseña": {
+        "lat": 40.1036,
+        "lon": -3.6981,
+        "population": 28102
+    },
+    "Benicarló": {
+        "lat": 40.4167,
+        "lon": 0.4167,
+        "population": 27780
+    },
+    "Almazora": {
+        "lat": 39.9403,
+        "lon": -0.0625,
+        "population": 27383
+    },
+    "Vícar": {
+        "lat": 36.8317,
+        "lon": -2.6431,
+        "population": 27631
+    },
+    "Sueca": {
+        "lat": 39.2026,
+        "lon": -0.3112,
+        "population": 27738
+    },
+    "San Pedro del Pinatar": {
+        "lat": 37.8167,
+        "lon": -0.75,
+        "population": 26827
+    },
+    "La Oliva": {
+        "lat": 28.6167,
+        "lon": -13.9333,
+        "population": 27945
+    },
+    "Algemesí": {
+        "lat": 39.1897,
+        "lon": -0.4378,
+        "population": 27305
+    },
+    "Cártama": {
+        "lat": 36.7114,
+        "lon": -4.6306,
+        "population": 27712
+    },
+    "Molíns de Rey": {
+        "lat": 41.4139,
+        "lon": 2.0158,
+        "population": 26242
+    },
+    "Lebrija": {
+        "lat": 36.9194,
+        "lon": -6.0781,
+        "population": 27665
+    },
+    "Santa Perpetua de Moguda": {
+        "lat": 41.5375,
+        "lon": 2.1819,
+        "population": 26033
+    },
+    "Morón de la Frontera": {
+        "lat": 37.1222,
+        "lon": -5.4517,
+        "population": 27582
+    },
+    "Cangas": {
+        "lat": 42.2642,
+        "lon": -8.7819,
+        "population": 26832
+    },
+    "Santa Eugenia": {
+        "lat": 42.5667,
+        "lon": -8.9833,
+        "population": 26897
+    },
+    "Almuñécar": {
+        "lat": 36.7339,
+        "lon": -3.6911,
+        "population": 26748
+    },
+    "Paracuellos de Jarama": {
+        "lat": 40.55,
+        "lon": -3.5167,
+        "population": 26450
+    },
+    "Alhaurín el Grande": {
+        "lat": 36.6331,
+        "lon": -4.6831,
+        "population": 26436
+    },
+    "Muchamiel": {
+        "lat": 38.4136,
+        "lon": -0.4456,
+        "population": 26192
+    },
+    "Bétera": {
+        "lat": 39.5922,
+        "lon": -0.4625,
+        "population": 26289
+    },
+    "Jumilla": {
+        "lat": 38.4792,
+        "lon": -1.325,
+        "population": 26596
+    },
+    "Villanueva de la Serena": {
+        "lat": 38.9667,
+        "lon": -5.8,
+        "population": 25873
+    },
+    "Torrelodones": {
+        "lat": 40.5756,
+        "lon": -3.9292,
+        "population": 24775
+    },
+    "Novelda": {
+        "lat": 38.385,
+        "lon": -0.768,
+        "population": 25611
+    },
+    "Ciempozuelos": {
+        "lat": 40.1592,
+        "lon": -3.6183,
+        "population": 25383
+    },
+    "Erandio": {
+        "lat": 43.3047,
+        "lon": -2.9731,
+        "population": 24489
+    },
+    "Adra": {
+        "lat": 36.7478,
+        "lon": -3.0161,
+        "population": 25501
+    },
+    "Olesa de Montserrat": {
+        "lat": 41.545,
+        "lon": 1.8944,
+        "population": 24272
+    },
+    "Oliva": {
+        "lat": 38.9194,
+        "lon": -0.1211,
+        "population": 25179
+    },
+    "Almonte": {
+        "lat": 37.2667,
+        "lon": -6.5167,
+        "population": 25448
+    },
+    "Onda": {
+        "lat": 39.9625,
+        "lon": -0.2639,
+        "population": 25099
+    },
+    "Mejorada del Campo": {
+        "lat": 40.3967,
+        "lon": -3.3858,
+        "population": 23897
+    },
+    "Cambre": {
+        "lat": 43.283,
+        "lon": -8.333,
+        "population": 24616
+    },
+    "Valls": {
+        "lat": 41.2883,
+        "lon": 1.2508,
+        "population": 24727
+    },
+    "Calpe": {
+        "lat": 38.645,
+        "lon": 0.0442,
+        "population": 24096
+    },
+    "Villarrobledo": {
+        "lat": 39.2667,
+        "lon": -2.6,
+        "population": 24978
+    },
+    "Marín": {
+        "lat": 42.3933,
+        "lon": -8.7,
+        "population": 24248
+    },
+    "Calahorra": {
+        "lat": 42.3,
+        "lon": -1.9667,
+        "population": 24654
+    },
+    "Zarautz": {
+        "lat": 43.2833,
+        "lon": -2.1667,
+        "population": 23271
+    },
+    "Coín": {
+        "lat": 36.6667,
+        "lon": -4.75,
+        "population": 24309
+    },
+    "Almansa": {
+        "lat": 38.8682,
+        "lon": -1.0979,
+        "population": 24388
+    },
+    "Martos": {
+        "lat": 37.7167,
+        "lon": -3.9667,
+        "population": 24329
+    },
+    "Bormujos": {
+        "lat": 37.3667,
+        "lon": -6.0667,
+        "population": 22536
+    },
+    "Mairena del Alcor": {
+        "lat": 37.3667,
+        "lon": -5.7333,
+        "population": 23938
+    },
+    "Los Barrios": {
+        "lat": 36.1833,
+        "lon": -5.4833,
+        "population": 24069
+    },
+    "Liria": {
+        "lat": 39.6258,
+        "lon": -0.5961,
+        "population": 24036
+    },
+    "Ibi": {
+        "lat": 38.6272,
+        "lon": -0.5753,
+        "population": 23677
+    },
+    "Conil de la Frontera": {
+        "lat": 36.2667,
+        "lon": -6.0833,
+        "population": 23497
+    },
+    "Icod de los Vinos": {
+        "lat": 28.35,
+        "lon": -16.7,
+        "population": 23496
+    },
+    "Vilaseca de Solcina": {
+        "lat": 41.111,
+        "lon": 1.145,
+        "population": 22681
+    },
+    "Altea": {
+        "lat": 38.5986,
+        "lon": -0.0519,
+        "population": 23010
+    },
+    "San Felíu de Guixols": {
+        "lat": 41.7806,
+        "lon": 3.0306,
+        "population": 22210
+    },
+    "Villanueva de la Cañada": {
+        "lat": 40.45,
+        "lon": -3.9833,
+        "population": 22845
+    },
+    "Teguise": {
+        "lat": 29.0611,
+        "lon": -13.5597,
+        "population": 23411
+    },
+    "Laguna de Duero": {
+        "lat": 41.5833,
+        "lon": -4.7167,
+        "population": 22642
+    },
+    "Torre del Mar": {
+        "lat": 36.75,
+        "lon": -4.1,
+        "population": 22819
+    },
+    "Cullera": {
+        "lat": 39.1639,
+        "lon": -0.2517,
+        "population": 22937
+    },
+    "Pilar de la Horadada": {
+        "lat": 37.8667,
+        "lon": -0.7833,
+        "population": 22949
+    },
+    "Puenteareas": {
+        "lat": 42.1667,
+        "lon": -8.5,
+        "population": 23049
+    },
+    "Esparraguera": {
+        "lat": 41.5381,
+        "lon": 1.8692,
+        "population": 22365
+    },
+    "Barbate de Franco": {
+        "lat": 36.1833,
+        "lon": -5.9167,
+        "population": 22872
+    },
+    "Montilla": {
+        "lat": 37.5833,
+        "lon": -4.6333,
+        "population": 22633
+    },
+    "Alhama de Murcia": {
+        "lat": 37.8514,
+        "lon": -1.4264,
+        "population": 22691
+    },
+    "Moguer": {
+        "lat": 37.2747,
+        "lon": -6.8386,
+        "population": 22643
+    },
+    "Aljaraque": {
+        "lat": 37.2667,
+        "lon": -7.0167,
+        "population": 22078
+    },
+    "Las Torres de Cotillas": {
+        "lat": 38.0264,
+        "lon": -1.2436,
+        "population": 21980
+    },
+    "Priego de Córdoba": {
+        "lat": 37.4333,
+        "lon": -4.1833,
+        "population": 22251
+    },
+    "Palafrugell": {
+        "lat": 41.9174,
+        "lon": 3.1631,
+        "population": 21049
+    },
+    "Manlleu": {
+        "lat": 42.0,
+        "lon": 2.2836,
+        "population": 20883
+    },
+    "Picasent": {
+        "lat": 39.3611,
+        "lon": -0.46,
+        "population": 21761
+    },
+    "Bañolas": {
+        "lat": 42.1194,
+        "lon": 2.7664,
+        "population": 20187
+    },
+    "Guía de Isora": {
+        "lat": 28.211,
+        "lon": -16.7784,
+        "population": 21827
+    },
+    "Amposta": {
+        "lat": 40.7106,
+        "lon": 0.5808,
+        "population": 21807
+    },
+    "Isla-Cristina": {
+        "lat": 37.1992,
+        "lon": -7.3214,
+        "population": 21523
+    },
+    "Almoradí": {
+        "lat": 38.1097,
+        "lon": -0.7894,
+        "population": 21404
+    },
+    "Ayamonte": {
+        "lat": 37.2,
+        "lon": -7.4,
+        "population": 21725
+    },
+    "Alcalá la Real": {
+        "lat": 37.45,
+        "lon": -3.9167,
+        "population": 21623
+    },
+    "Nerja": {
+        "lat": 36.7469,
+        "lon": -3.879,
+        "population": 21450
+    },
+    "Aspe": {
+        "lat": 38.3456,
+        "lon": -0.7689,
+        "population": 21191
+    },
+    "La Unión": {
+        "lat": 37.6192,
+        "lon": -0.8756,
+        "population": 20656
+    },
+    "Güimar": {
+        "lat": 28.315,
+        "lon": -16.41,
+        "population": 21224
+    },
+    "Algete": {
+        "lat": 40.5978,
+        "lon": -3.5003,
+        "population": 20767
+    },
+    "Puzol": {
+        "lat": 39.6167,
+        "lon": -0.3011,
+        "population": 20191
+    },
+    "Los Llanos de Aridane": {
+        "lat": 28.65,
+        "lon": -17.9,
+        "population": 20648
+    },
+    "Pájara": {
+        "lat": 28.35,
+        "lon": -14.1,
+        "population": 21014
+    },
+    "Alcudia": {
+        "lat": 39.8525,
+        "lon": 3.1192,
+        "population": 20717
+    },
+    "Palma del Río": {
+        "lat": 37.7,
+        "lon": -5.2833,
+        "population": 20910
+    },
+    "Carcagente": {
+        "lat": 39.1222,
+        "lon": -0.4489,
+        "population": 20498
+    },
+    "Hernani": {
+        "lat": 43.2667,
+        "lon": -1.9667,
+        "population": 20375
+    },
+    "Cartaya": {
+        "lat": 37.2833,
+        "lon": -7.15,
+        "population": 20717
+    },
+    "Loja": {
+        "lat": 37.1667,
+        "lon": -4.15,
+        "population": 20555
+    },
+    "Baza": {
+        "lat": 37.4833,
+        "lon": -2.7667,
+        "population": 20376
+    },
+    "Medina del Campo": {
+        "lat": 41.3,
+        "lon": -4.9167,
+        "population": 20271
+    },
+    "Cabra": {
+        "lat": 37.4667,
+        "lon": -4.4333,
+        "population": 20245
+    },
+    "Lalín": {
+        "lat": 42.65,
+        "lon": -8.1167,
+        "population": 20201
+    },
+    "Requena": {
+        "lat": 39.4861,
+        "lon": -1.1017,
+        "population": 20235
+    },
+    "Huércal-Overa": {
+        "lat": 37.3833,
+        "lon": -1.9333,
+        "population": 20093
+    }
+}
