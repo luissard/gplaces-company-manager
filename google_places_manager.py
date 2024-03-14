@@ -1,5 +1,6 @@
 import json
 import math
+import re
 import time
 import googlemaps
 import sqlite3
@@ -13,6 +14,7 @@ class GooglePlacesManager:
         """Constructor initializing the Google Maps client, SQLite database connection, and API consumption limits."""
         config = configparser.ConfigParser()
         config.read("config.ini")
+
         try:
             self.gmaps = googlemaps.Client(key=config['DEFAULT']['GoogleApiKey'])
             self.conn = sqlite3.connect(config['DEFAULT']['DatabasePath'])
@@ -20,16 +22,23 @@ class GooglePlacesManager:
             self.max_monthly_cost = config['DEFAULT'].getfloat('MaxMonthlyCost')
             self.place_details_query_cost = config['DEFAULT'].getfloat('PlaceDetailsQueryCost')
             self.place_search_query_cost = config['DEFAULT'].getfloat('PlaceSearchQueryCost')
+            self.place_photo_query_cost = config['DEFAULT'].getfloat('PlacePhotoQueryCost')
             self.current_company_queries = config['QUERIES']['CompanyQueries'].split(', ')
+            self.debug_mode = config['DEFAULT']['DEBUG'] == '1'
             self.default_query_cost = 1
             self._create_tables()
             self.current_company_details = None
         except Exception as e:
             self.error('Please complete your config.ini #Error: ' + repr(e), True)
 
-    @staticmethod
-    def error(msg, do_exit=False):
+    def error(self, msg, do_exit=False):
+        timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         print(msg)
+
+        ''' Writes in the log file the actual hour and date with the error messagge if debug mode is enabled. '''
+        if self.debug_mode:
+            with open('log/debug.log', 'a') as log_file:
+                log_file.write(f'[{timestamp}] ERROR: {msg}\n')
 
         if do_exit:
             exit(0)
@@ -68,6 +77,8 @@ class GooglePlacesManager:
             return self.place_details_query_cost
         elif query_type == 'text_search':
             return self.place_search_query_cost
+        elif query_type == 'place_photo':
+            return self.place_photo_query_cost
         else:
             return self.default_query_cost
 
@@ -83,6 +94,10 @@ class GooglePlacesManager:
                 return self.gmaps.place(**params)
             elif query_model == 'places':
                 return self.gmaps.places(**params)
+            elif query_model == 'photos':
+                if 'photo_reference' in params:
+                    return self.gmaps.places_photo(**params)
+                self.error('Missing photo reference for photos request. Exiting.', True)
 
             self.error('The query model is invalid. Exiting', True)
         except Exception as e:
@@ -92,7 +107,8 @@ class GooglePlacesManager:
                 self.error('The query returned an error' + repr(e), True)
 
     def update_company_details(self, frequency_days_to_update, limit=200):
-        """Updates the details of the companies stored in the database not updated in the last frequency_days_to_update"""
+        """Updates the details of the companies stored in the database not updated in the last
+        frequency_days_to_update"""
         self.cursor.execute('''
             SELECT place_id, name FROM company 
             WHERE (julianday(?) - julianday(detail_updated_at)) > (?) OR detail_updated_at IS NULL
@@ -108,10 +124,13 @@ class GooglePlacesManager:
             params = {
                 'place_id': place_id,
                 'fields': ['website', 'formatted_phone_number', 'rating', 'reviews', 'user_ratings_total',
-                           'opening_hours'],
+                           'opening_hours', 'photo'],
                 'language': 'es'
             }
             self.current_company_details = self.google_places_request('place_details', 'place', params)
+
+            # TODO: Refactor to add into db and also refactor method.
+            company_photo = self.update_company_photo(30, 200)
 
             website = self.current_company_details['result'].get('website')
             phone_number = self.current_company_details['result'].get('formatted_phone_number')
@@ -135,6 +154,34 @@ class GooglePlacesManager:
             self.cursor.execute("UPDATE company SET detail_updated_at = ? WHERE place_id = ?"
                                 , (datetime.date.today().strftime('%Y-%m-%d'), place_id))
 
+            self.conn.commit()
+
+    def update_company_photo(self, frequency_days_to_update, limit=200):
+        self.cursor.execute('''
+                   SELECT place_id, name FROM company 
+                   WHERE (julianday(?) - julianday(detail_updated_at)) > (?) OR detail_updated_at IS NULL
+                   ORDER BY section_id ASC LIMIT ?          
+                   ''', (datetime.date.today(), frequency_days_to_update, limit)
+                            )
+        companies_to_update = self.cursor.fetchall()
+        print(f"Updating {len(companies_to_update)} company photos...")
+
+        for company in companies_to_update:
+            print(f"Updating {company[1]} photo...")
+
+            params = {
+                'photo_reference': self.current_company_details['result']['photos'][0].get('photo_reference'),
+                'max_height': 1600,
+                'max_width': 1600
+            }
+            place_photo = self.google_places_request('place_photos', 'photos', params)
+
+            place_url = place_photo.gi_frame.f_locals['self'].request.url
+            self.cursor.execute('''
+                INSERT INTO company_details (place_photo)
+                VALUES (?) ON CONFLICT(place_id) DO 
+                UPDATE SET place_photo = ? ''', place_url
+                                )
             self.conn.commit()
 
     def get_opening_hours_json(self):
@@ -222,20 +269,61 @@ class GooglePlacesManager:
                     for result in search_results['results']:
                         if 'place_id' in result and 'name' in result:
                             today_str = datetime.date.today().strftime('%Y-%m-%d')
-                            self.cursor.execute('''INSERT INTO company (place_id, name, section_id, updated_at)
-                                                   VALUES (?, ?, ?, ?) ON CONFLICT(place_id) DO 
-                                                   UPDATE SET name = ?, section_id = ?, updated_at = ?''',
-                                                (result['place_id'], result['name'], section_id, today_str
-                                                 , result['name'], section_id, today_str))
+                            country, state, city, address, postal_code = self.parse_address(result['formatted_address'])
+
+                            self.cursor.execute('''INSERT INTO company (place_id, name, section_id, country, state, 
+                                                    city, address, postal_code, updated_at)
+                                                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(place_id) DO 
+                                                   UPDATE SET name = ?, section_id = ?, country = ?, state = ?, city = ?, 
+                                                   address = ?, postal_code = ?, updated_at = ?''',
+                                                (result['place_id'], result['name'],
+                                                 section_id, country, state, city, address, postal_code, today_str,
+                                                 result['name'], section_id, country, state, city, address, postal_code,
+                                                 today_str))
                             self.conn.commit()
                             committed = True
-
                 if not committed:
                     self.error(f'Could not find result for latitude {lat} and longitude {lon}.')
 
+    @staticmethod
+    def has_postal_code(address_element):
+        # Regular expression to find if the address element has a spanish postal code (5 digits)
+        postal_code_match = re.search(r'\d{5}\b', address_element)
+        if postal_code_match:
+            return True
+        return False
+
+    def parse_address(self, address_string):
+        """ Gets country, state, city, address and postal code from the Google Places API formated_address """
+        splitted_result = address_string.split(',')
+        # Concatenates, using commas, the initial elements up to the third element from the end of the list.
+        address = ','.join(splitted_result[:-3]).strip()
+
+        i = -3  # Index to start from the third element from the end of the list, representing the city or district.
+
+        ''' Search where's the element with the postal code since it could be the third or second element from the end 
+        of the list '''
+        if i + 1 < len(splitted_result):
+            postal_code = splitted_result[i].strip()[:6] if self.has_postal_code(splitted_result[i]) \
+                else splitted_result[i + 1].strip()[:6]
+            # Gets the city if the third element from the end has a postal code, else gets the state as city.
+            city = splitted_result[i].strip()[6:] if self.has_postal_code(splitted_result[i]) \
+                else splitted_result[i + 1].strip()[6:]
+            # In case that the state has the postal code, we'll remove it and take only the city's name.
+            state = splitted_result[i + 1].strip()[6:] if self.has_postal_code(splitted_result[i + 1]) \
+                else splitted_result[i + 1].strip()
+
+        if i + 2 < len(splitted_result):
+            country = splitted_result[i + 2].strip()
+
+        # Some nursing homes doesn't have the city on the address, but this means that they are on the same province.
+        if not city:
+            city = state
+
+        return country, state, city, address, postal_code
+
     def get_most_outdated_sections(self, limit=20):
         """ Gets sections ordering by date, then returns the section_ids """
-
         self.cursor.execute('''
             SELECT s.section_id FROM section s
             LEFT JOIN company c ON c.section_id = s.section_id
@@ -307,6 +395,7 @@ class GooglePlacesManager:
                 avg_reviews FLOAT,
                 reviews TEXT,
                 opening_hours TEXT,
+                place_photo TEXT,
                 updated_at DATE
             )
         ''')
@@ -315,6 +404,11 @@ class GooglePlacesManager:
                 place_id TEXT PRIMARY KEY,
                 name TEXT,
                 section_id INTEGER,
+                country TEXT,                
+                state TEXT,
+                city TEXT,
+                address TEXT,                
+                postal_code TEXT,                
                 updated_at DATE,
                 detail_updated_at DATE
             )
