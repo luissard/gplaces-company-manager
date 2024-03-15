@@ -279,31 +279,45 @@ class GooglePlacesManager:
             return True
         return False
 
+    @staticmethod
+    def remove_postal_code(text):
+        """Remove postal code from passed text"""
+        return re.sub(r'\b\d{5}\b', '', text).strip()
+
     def parse_address(self, address_string):
-        """ Gets country, state, city, address and postal code from the Google Places API formated_address """
+
+        country = state = city = address = postal_code = ''
         splitted_result = address_string.split(',')
-        # Concatenates, using commas, the initial elements up to the third element from the end of the list.
-        address = ','.join(splitted_result[:-3]).strip()
+        splitted_result.reverse()
+        address_parts = []
 
-        i = -3  # Index to start from the third element from the end of the list, representing the city or district.
+        for part in splitted_result:
+            part = part.strip()
+            if postal_code == '' and self.has_postal_code(part):
+                subpart = part.split(' ', 1)
+                if len(subpart) == 2:
+                    postal_code = subpart[0]
+                    city = subpart[1]
+                else:
+                    postal_code = subpart[0]
 
-        ''' Search where's the element with the postal code since it could be the third or second element from the end 
-        of the list '''
-        if i + 1 < len(splitted_result):
-            postal_code = splitted_result[i].strip()[:6] if self.has_postal_code(splitted_result[i]) \
-                else splitted_result[i + 1].strip()[:6]
-            # Gets the city if the third element from the end has a postal code, else gets the state as city.
-            city = splitted_result[i].strip()[6:] if self.has_postal_code(splitted_result[i]) \
-                else splitted_result[i + 1].strip()[6:]
-            # In case that the state has the postal code, we'll remove it and take only the city's name.
-            state = splitted_result[i + 1].strip()[6:] if self.has_postal_code(splitted_result[i + 1]) \
-                else splitted_result[i + 1].strip()
+            if country == '':
+                country = part
+            elif state == '':
+                state = part
+            elif city == '' or city in part:
+                city = part
+            else:
+                address_parts.append(part)
 
-        if i + 2 < len(splitted_result):
-            country = splitted_result[i + 2].strip()
+        country = self.remove_postal_code(country)
+        state = self.remove_postal_code(state)
+        city = self.remove_postal_code(city)
+        address_parts.reverse()
+        address_parts = [self.remove_postal_code(part) for part in address_parts]
+        address = ', '.join(address_parts)
 
-        # Some nursing homes doesn't have the city on the address, but this means that they are on the same province.
-        if not city:
+        if city == '':
             city = state
 
         return country, state, city, address, postal_code
