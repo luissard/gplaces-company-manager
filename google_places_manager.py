@@ -94,7 +94,7 @@ class GooglePlacesManager:
                 return self.gmaps.place(**params)
             elif query_model == 'places':
                 return self.gmaps.places(**params)
-            elif query_model == 'photos':
+            elif query_model == 'photo':
                 if 'photo_reference' in params:
                     return self.gmaps.places_photo(**params)
                 self.error('Missing photo reference for photos request. Exiting.', True)
@@ -123,14 +123,10 @@ class GooglePlacesManager:
             place_id = company[0]
             params = {
                 'place_id': place_id,
-                'fields': ['website', 'formatted_phone_number', 'rating', 'reviews', 'user_ratings_total',
-                           'opening_hours', 'photo'],
+                'fields': ['website', 'formatted_phone_number', 'rating', 'reviews', 'user_ratings_total', 'opening_hours', 'photo'],
                 'language': 'es'
             }
             self.current_company_details = self.google_places_request('place_details', 'place', params)
-
-            # TODO: Refactor to add into db and also refactor method.
-            company_photo = self.update_company_photo(30, 200)
 
             website = self.current_company_details['result'].get('website')
             phone_number = self.current_company_details['result'].get('formatted_phone_number')
@@ -138,16 +134,17 @@ class GooglePlacesManager:
             all_reviews_json = self.get_all_reviews_json()
             total_reviews = self.current_company_details['result'].get('user_ratings_total')
             opening_hours = self.get_opening_hours_json()
+            photo = self.get_company_photo()
 
             self.cursor.execute('''
                 INSERT INTO company_details 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(place_id) DO 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(place_id) DO 
                 UPDATE SET website = ?, phone_number = ?, total_reviews = ?, avg_reviews = ?, reviews = ?
-                , opening_hours = ?, updated_at = ?                
+                , opening_hours = ?, place_photo = ?, updated_at = ?                
             ''', (
-                place_id, website, phone_number, total_reviews, avg_reviews, all_reviews_json, opening_hours,
+                place_id, website, phone_number, total_reviews, avg_reviews, all_reviews_json, opening_hours, photo,
                 datetime.date.today().strftime('%Y-%m-%d'), website, phone_number, total_reviews, avg_reviews,
-                all_reviews_json, opening_hours, datetime.date.today().strftime('%Y-%m-%d')
+                all_reviews_json, opening_hours, photo, datetime.date.today().strftime('%Y-%m-%d')
             )
                                 )
 
@@ -156,33 +153,22 @@ class GooglePlacesManager:
 
             self.conn.commit()
 
-    def update_company_photo(self, frequency_days_to_update, limit=200):
-        self.cursor.execute('''
-                   SELECT place_id, name FROM company 
-                   WHERE (julianday(?) - julianday(detail_updated_at)) > (?) OR detail_updated_at IS NULL
-                   ORDER BY section_id ASC LIMIT ?          
-                   ''', (datetime.date.today(), frequency_days_to_update, limit)
-                            )
-        companies_to_update = self.cursor.fetchall()
-        print(f"Updating {len(companies_to_update)} company photos...")
+    def get_company_photo(self):
+        """ Get first company photo from company using google place photos API request """
 
-        for company in companies_to_update:
-            print(f"Updating {company[1]} photo...")
+        if 'photos' in self.current_company_details['result']:
+            try:
+                params = {
+                    'photo_reference': self.current_company_details['result']['photos'][0].get('photo_reference'),
+                    'max_height': 1600,
+                    'max_width': 1600
+                }
+                place_photo = self.google_places_request('place_photo', 'photo', params)
+                return place_photo.gi_frame.f_locals['self'].request.url
+            except Exception:
+                return ''
 
-            params = {
-                'photo_reference': self.current_company_details['result']['photos'][0].get('photo_reference'),
-                'max_height': 1600,
-                'max_width': 1600
-            }
-            place_photo = self.google_places_request('place_photos', 'photos', params)
-
-            place_url = place_photo.gi_frame.f_locals['self'].request.url
-            self.cursor.execute('''
-                INSERT INTO company_details (place_photo)
-                VALUES (?) ON CONFLICT(place_id) DO 
-                UPDATE SET place_photo = ? ''', place_url
-                                )
-            self.conn.commit()
+        return ''
 
     def get_opening_hours_json(self):
         weekday_text = []
@@ -346,9 +332,9 @@ class GooglePlacesManager:
         }
         return section
 
-    def update_companies(self, limit=20):
+    def update_companies(self, sections_limit=10):
 
-        outdated_sections = self.get_most_outdated_sections(limit)
+        outdated_sections = self.get_most_outdated_sections(sections_limit)
         for outdated_section in outdated_sections:
             selected_section = self.get_section(outdated_section)
 
