@@ -1,6 +1,7 @@
 # Project files
 config.ini
 *.db
+exported_data.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
